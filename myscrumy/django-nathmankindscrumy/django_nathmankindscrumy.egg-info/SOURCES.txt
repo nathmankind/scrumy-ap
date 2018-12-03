@@ -1,0 +1,16 @@
+MANIFEST.in
+README.rst
+setup.py
+django_nathmankindscrumy.egg-info/PKG-INFO
+django_nathmankindscrumy.egg-info/SOURCES.txt
+django_nathmankindscrumy.egg-info/dependency_links.txt
+django_nathmankindscrumy.egg-info/top_level.txt
+nathmankindscrumy/__init__.py
+nathmankindscrumy/admin.py
+nathmankindscrumy/apps.py
+nathmankindscrumy/models.py
+nathmankindscrumy/tests.py
+nathmankindscrumy/urls.py
+nathmankindscrumy/views.py
+nathmankindscrumy/migrations/0001_initial.py
+nathmankindscrumy/migrations/__init__.py

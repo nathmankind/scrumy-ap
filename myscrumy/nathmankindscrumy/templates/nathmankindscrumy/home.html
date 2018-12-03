@@ -1,0 +1,84 @@
+
+
+{% extends 'nathmankindscrumy/base.html' %}
+{% block body %}
+
+<div class="row">
+        <div class="column">
+            <div class="column-title">
+                <h2>Weekly Goal</h2>
+            </div>
+            {% if w_goals %}
+            {% for details in w_goals.nathmankindscrumy.all %}
+            <div class="goal-card">
+                <p class="id">id: {{ details.goal_id }}</p>
+                <p class="g_user">User: {{ details.user }}</p>
+                <p class="g_name">Goal: {{ details.goal_name }}</p>
+                <p><a href="/nathmankindscrumy/movegoal/{{ details.pk }}">Change Status</a></p>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No Goals Available</p>
+            {% endif %}
+        </div>
+
+
+        <div class="column">
+            <div class="column-title">
+                <h2>Daily Goal</h2>
+            </div>
+            {% if daily_goals %}
+            {% for details in daily_goals.nathmankindscrumy.all %}
+            <div class="goal-card">
+                <p class="id">id: {{ details.goal_id }}</p>
+                <p class="g_user">User: {{ details.user }}</p>
+                <p class="g_name">Goal: {{ details.goal_name }}</p>
+                <p><a href="/nathmankindscrumy/movegoal/{{ details.pk }}">Change Status</a></p>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No Goals Available</p>
+            {% endif %}
+        </div>
+
+        <div class="column">
+            <div class="column-title">
+                <h2>Verify Goal</h2>
+            </div>
+            {% if verify_goals %}
+            {% for details in verify_goals.nathmankindscrumy.all %}
+            <div class="goal-card">
+                <p class="id">id: {{ details.goal_id }}</p>
+                <p class="g_user">User: {{ details.user }}</p>
+                <p class="g_name">Goal: {{ details.goal_name }}</p>
+                <p><a href="/nathmankindscrumy/movegoal/{{ details.pk }}">Change Status</a></p>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No Goals Available</p>
+            {% endif %}
+        </div>
+
+        <div class="column">
+            <div class="column-title">
+                <h2>Done Goal</h2>
+            </div>
+            {% if done_goals %}
+            {% for details in done_goals.nathmankindscrumy.all %}
+            <div class="goal-card">
+                <p class="id">id: {{ details.goal_id }}</p>
+                <p class="g_user">User: {{ details.user }}</p>
+                <p class="g_name">Goal: {{ details.goal_name }}</p>
+                <p><a href="/nathmankindscrumy/movegoal/{{ details.pk }}">Change Status</a></p>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No Goals Available</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,7 @@
+MANIFEST.in
+README.rst
+setup.py
+nathmankindscrumy.egg-info/PKG-INFO
+nathmankindscrumy.egg-info/SOURCES.txt
+nathmankindscrumy.egg-info/dependency_links.txt
+nathmankindscrumy.egg-info/top_level.txt

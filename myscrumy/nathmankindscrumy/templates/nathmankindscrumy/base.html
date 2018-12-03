@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scrumy Goals</title>
+    <style>
+    body {
+        font-family: sans-serif;
+    }
+
+    nav {
+            background-color: #8fa2d5;
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            text-align:center;
+            flex-wrap: wrap;
+            text-align: center;
+       }
+       nav p {
+            color: #fff;
+            padding: 0 16px;
+       }
+       .nav-items {
+            margin: auto;
+            display: flex;
+       }
+
+        a {
+            text-decoration: none;
+            color: #2009e4;
+        }
+        nav p a:hover {
+            color: white;
+        }
+
+        a:hover {
+            color: red;
+        }
+        ul {
+            display: inline-block;
+            list-style-type: none;
+        }
+        table {
+            margin: 20px 12px;
+        }
+        .row {
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            margin: 12px auto;
+        }
+
+        .column {
+            width: 24%;
+            max-width: 25%;
+            border: 1px solid;
+        }
+
+        .column-title {
+            border-bottom: 1px solid;
+        }
+
+        .goal-card {
+            margin: 24px;
+            text-align: left;
+            padding: 6px;
+            border: 1px solid #cbc2c2;
+            border-radius: 8px;
+            background: ghostwhite;
+        }
+
+        .goal-card p {
+            margin: 0;
+            padding: 4px
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-items">
+            <p class="p1">Current user: {{ current_user }}</p>
+            <p class="p2">User Group: {{ current_user.groups.all.0 }}</p>
+            <p class="add_button"><a href={% url 'nathmankindscrumy:add_goal' %}>Add Goal</a></p>
+            <p style="padding-left:24px"><a href={% url 'nathmankindscrumy:login' %} >Logout</a></p>
+        </div>
+
+    </nav>
+
+{% block body %}
+{% endblock %}
+</body>
+
+</html>

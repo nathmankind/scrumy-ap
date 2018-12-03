@@ -1,0 +1,1 @@
+This App is built with django, a python library used in creating web applications.
