@@ -8,6 +8,9 @@ from .models import ScrumyGoals
 from .models import CreateGoalForm
 from .models import SignUpForm
 from .models import ChangeGoalForm, AdminChangeGoalForm, QAChangeGoalForm
+from rest_framework import viewsets
+from rest_framework.response import Response
+from .serializers import UserSerializer, ScrumUserSerializer, ScrumGoalSerializer
 from .models import User
 from random import randint
 
@@ -140,6 +143,30 @@ def add_goal(request):
 #     output = ','.join([x.goal_name for x in goals])
 #     return HttpResponse(output)
 
+
+# ====== VIEWSET =======
+class UserViewSet(viewsets.ViewSet):
+    def list(self, request):
+        queryset = User.objects.all()
+        serializer = UserSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+
+class ScrumUserViewSet(viewsets.ViewSet):
+    def list(self, request):
+        queryset = ScrumyGoals.objects.all()
+        serializer = ScrumUserSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+
+class ScrumGoalViewSet(viewsets.ViewSet):
+    def list(self, request):
+        queryset = ScrumyGoals.objects.all()
+        serializer = ScrumGoalSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+
+# ==== VIEWSET ENDS ====== #
 
 def home(request):
     return HttpResponse(ScrumyGoals.objects.filter(goal_name="Learn Django"))

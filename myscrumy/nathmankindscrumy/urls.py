@@ -1,7 +1,13 @@
 from django.urls import include, path
 from . import views
+from rest_framework.routers import DefaultRouter
 
 app_name = 'nathmankindscrumy'
+router = DefaultRouter()
+router.register(r'users', views.UserViewSet, basename='users')
+router.register(r'scrum_users', views.ScrumUserViewSet, basename='scrum_user')
+router.register(r'goals', views.ScrumGoalViewSet, basename='scrumy_goals')
+
 urlpatterns = [
     path('', views.index, name='index'),
 
@@ -30,5 +36,8 @@ urlpatterns = [
     path('goal_success', views.move_goal_success, name='goal_success'),
 
     #path for error page
-    path('add_goal_success', views.goal_add, name='add_goal_success')
+    path('add_goal_success', views.goal_add, name='add_goal_success'),
+
+    path('api/', include((router.urls, 'app_name')))
 ]
+
